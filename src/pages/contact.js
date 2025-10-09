@@ -1,6 +1,6 @@
 // src/pages/contact.js
-import React from "react";
-import { Link } from "gatsby";
+import React from "react"
+import { Link } from "gatsby"
 
 const ContactPage = () => (
   <div>
@@ -8,7 +8,6 @@ const ContactPage = () => (
     <p>This is the contact page of my portfolio.</p>
     <Link to="/">Go to Home</Link>
   </div>
-);
+)
 
-export default ContactPage;
-
+export default ContactPage
