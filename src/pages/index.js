@@ -62,6 +62,8 @@ const IndexPage = () => {
       </footer>
 
       <Link to="/about">Learn more about me</Link>
+      {" | "}
+      <Link to="/blog">Read our blog</Link>
     </main>
   )
 }
