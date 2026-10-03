@@ -14,7 +14,7 @@ const IndexPage = () => (
     <section className="hero" aria-labelledby="hero-title">
       <div className="container">
         <p className="hero__intro">
-          {site.name} · {site.role}
+          {site.person} · {site.role}
         </p>
         <h1 id="hero-title" className="hero__title">
           I build products that solve real business problems.
@@ -97,7 +97,7 @@ const IndexPage = () => (
         />
         <div className="prose">
           <p>
-            I'm {site.name}, a founder and product builder based in{` `}
+            I'm {site.person}, a founder and product builder based in{` `}
             {site.location}. I find problems worth solving, understand how the
             work actually happens, and build products around those problems.
             That means product thinking, design, development, architecture,

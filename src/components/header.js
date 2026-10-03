@@ -25,7 +25,7 @@ const Header = () => {
       <div className="container site-header__inner">
         <Link to="/" className="wordmark" onClick={() => setOpen(false)}>
           <span className="wordmark__mark" aria-hidden="true" />
-          {site.name}
+          {site.company}
         </Link>
 
         <button

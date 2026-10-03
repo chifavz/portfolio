@@ -59,7 +59,10 @@ const ContactPage = () => {
 }
 
 export const Head = () => (
-  <Seo title="Contact" description="Get in touch with Chykey Solutions." />
+  <Seo
+    title="Contact"
+    description="Get in touch with Chike, founder of Chykey Solutions."
+  />
 )
 
 export default ContactPage

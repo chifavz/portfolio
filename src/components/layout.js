@@ -17,9 +17,9 @@ const Layout = ({ children }) => (
     <footer className="site-footer">
       <div className="container site-footer__inner">
         <div>
-          <p className="site-footer__name">{site.name}</p>
+          <p className="site-footer__name">{site.company}</p>
           <p className="site-footer__note">
-            {site.role} · {site.location}
+            {site.person} · {site.role} · {site.location}
           </p>
         </div>
         <nav className="site-footer__links" aria-label="Footer">
@@ -30,7 +30,7 @@ const Layout = ({ children }) => (
         </nav>
       </div>
       <div className="container site-footer__base">
-        © {new Date().getFullYear()} {site.name} · Built with{` `}
+        © {new Date().getFullYear()} {site.company} · Built with{` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
       </div>
     </footer>

@@ -10,8 +10,8 @@
 module.exports = {
   siteMetadata: {
     title: `Chykey Solutions`,
-    description: `Chykey Solutions builds products that solve real business problems. Founder of IsGoBite and FleetFav.`,
-    author: `Chykey Solutions`,
+    description: `Chike builds products that solve real business problems. Founder of IsGoBite and FleetFav.`,
+    author: `Chike`,
   },
   plugins: [
     `gatsby-plugin-image`,

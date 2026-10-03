@@ -61,8 +61,8 @@ const AboutPage = () => (
         </div>
         <div className="prose prose--large">
           <p>
-            I'm {site.name}. I started out building websites and web apps. Now I
-            build products of my own.
+            I'm {site.person}. I started out building websites and web apps. Now
+            I build products of my own.
           </p>
           <p>
             I work across the whole thing. I figure out the problem, decide what
@@ -152,7 +152,7 @@ const AboutPage = () => (
 export const Head = () => (
   <Seo
     title="About"
-    description="Chykey Solutions is a founder and product builder in Dallas, TX, building IsGoBite and FleetFav."
+    description="Chike is a founder and product builder in Dallas, TX, building IsGoBite and FleetFav."
   />
 )
 

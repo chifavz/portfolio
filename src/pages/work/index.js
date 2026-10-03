@@ -30,7 +30,7 @@ const WorkPage = () => (
 export const Head = () => (
   <Seo
     title="Work"
-    description="Case studies for IsGoBite and FleetFav, two products built by Chykey Solutions."
+    description="Case studies for IsGoBite and FleetFav, two products built by Chike."
   />
 )
 
