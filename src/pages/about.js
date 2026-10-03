@@ -1,56 +1,159 @@
-// src/pages/about.js
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 
-const About = () => {
-  return (
-    <div>
-      <h1>About Me</h1>
-      <section>
-        <p>
-          Chifavz studio we are passionate and results-driven web developer
-          based in Dallas Tx. With a strong foundation in user interface, I
-          strive to create seamless and engaging digital experiences.
-        </p>
-        <p>
-          My journey in web development started with a fascination for turning
-          ideas into interactive and user-friendly websites. Over the years,
-          I've honed my skills in HTML, CSS, JavaScript, and various frameworks
-          to bring creative concepts to life.
-        </p>
-        <p>
-          What sets me apart is my commitment to delivering high-quality
-          solutions tailored to meet the unique needs of each project. I thrive
-          on challenges and enjoy staying updated with the latest technologies
-          to provide cutting-edge solutions.
-        </p>
-      </section>
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+import { site } from "../data/site"
+import { capabilities } from "../data/approach"
 
-      <section>
-        <h2>Key Skills</h2>
-        <ul>
-          <li>Responsive Web Design</li>
-          <li>React.js</li>
-          <li>Node.js and Express</li>
-          <li>RESTful API Development</li>
-          <li>Version Control (Git)</li>
-          <li>Redux.js</li>
-          <li>Gatsby.js</li>
+const work = [
+  {
+    title: `Product thinking`,
+    text: `What's the real problem? Who has it? What should the product do, and what should it leave out?`,
+  },
+  {
+    title: `Design`,
+    text: `Workflows, roles, and screens that fit how people already work.`,
+  },
+  {
+    title: `Development`,
+    text: `Web and mobile apps, APIs, and the data model underneath them.`,
+  },
+  {
+    title: `Architecture & integrations`,
+    text: `How the pieces connect: payments, third-party APIs, and other products.`,
+  },
+  {
+    title: `Deployment`,
+    text: `Getting it into production, testing it, and keeping it running.`,
+  },
+]
+
+const AboutPage = () => (
+  <Layout>
+    <section className="page-hero">
+      <div className="container">
+        <p className="eyebrow">About</p>
+        <h1 className="page-hero__title">I build products, not just code.</h1>
+      </div>
+    </section>
+
+    <section className="section section--flush-top">
+      <div className="container split">
+        <div className="about-aside">
+          <dl className="fact-list">
+            <div>
+              <dt>Based in</dt>
+              <dd>{site.location}</dd>
+            </div>
+            <div>
+              <dt>Building</dt>
+              <dd>
+                <Link to="/work/isgobite/">IsGoBite</Link>,{` `}
+                <Link to="/work/fleetfav/">FleetFav</Link>
+              </dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Software for real business operations</dd>
+            </div>
+          </dl>
+        </div>
+        <div className="prose prose--large">
+          <p>
+            I'm {site.name}. I started out building websites and web apps. Now I
+            build products of my own.
+          </p>
+          <p>
+            I work across the whole thing. I figure out the problem, decide what
+            the product should be, design how it works, write the code, connect
+            the integrations, and put it in production. I don't hand off between
+            those stages because they aren't really separate. A decision about
+            scope shapes the data model. A billing model shapes the workflow.
+          </p>
+          <p>
+            Right now that's two products.{" "}
+            <Link to="/work/isgobite/">IsGoBite</Link>
+            {` `}helps small businesses turn what they know about their business
+            into a professional online presence.{` `}
+            <Link to="/work/fleetfav/">FleetFav</Link> helps trucking companies
+            run loads, pay drivers, and see their real profit per load.
+          </p>
+          <p>
+            They're different industries with the same approach. Understand the
+            business first. Then build the system that solves the problem, and
+            keep improving it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section className="section section--tinted" aria-labelledby="how-title">
+      <div className="container">
+        <div className="section-heading">
+          <p className="section-heading__label">How I work</p>
+          <h2 id="how-title">From the problem through to production</h2>
+        </div>
+        <ul className="work-list">
+          {work.map(w => (
+            <li key={w.title}>
+              <h3>{w.title}</h3>
+              <p>{w.text}</p>
+            </li>
+          ))}
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <h2>Let's Connect</h2>
-        <p>
-          I'm always open to new opportunities and collaborations. Whether you
-          have a project in mind or just want to connect, feel free to reach
-          out. Let's create something amazing together!
+    <section className="section" aria-labelledby="tools-title">
+      <div className="container">
+        <div className="section-heading">
+          <p className="section-heading__label">Tools</p>
+          <h2 id="tools-title">What I build with</h2>
+        </div>
+        <div className="capability-grid">
+          {capabilities.map(group => (
+            <div key={group.title} className="capability-group">
+              <h3>{group.title}</h3>
+              <ul className="tag-list">
+                {group.items.map(item => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="section cta" aria-labelledby="about-cta">
+      <div className="container">
+        <h2 id="about-cta" className="cta__title">
+          Let's talk products.
+        </h2>
+        <p className="cta__lede">
+          I enjoy conversations about useful software, problems worth solving,
+          and what it takes to turn a product into a business. Or just about
+          what I'm building with IsGoBite and FleetFav.
         </p>
-      </section>
+        <div className="button-row">
+          <Link to="/contact/" className="button button--primary">
+            Contact
+          </Link>
+          <Link to="/work/" className="button button--secondary">
+            See the work
+          </Link>
+        </div>
+      </div>
+    </section>
+  </Layout>
+)
 
-      <Link to="/">Go to Home</Link>
-    </div>
-  )
-}
+export const Head = () => (
+  <Seo
+    title="About"
+    description="Chykey Solutions is a founder and product builder in Dallas, TX, building IsGoBite and FleetFav."
+  />
+)
 
-export default About
+export default AboutPage

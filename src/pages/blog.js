@@ -1,43 +1,37 @@
-// src/pages/blog.js
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
 const BlogPage = () => (
-  <div>
-    <h1>Blog</h1>
-    <section>
-      <p>
-        Welcome to my blog! Here I share insights, tutorials, and thoughts about
-        web development.
-      </p>
+  <Layout>
+    <section className="page-hero">
+      <div className="container">
+        <p className="eyebrow">Writing</p>
+        <h1 className="page-hero__title">Notes from building</h1>
+        <p className="page-hero__lede">
+          Notes on product decisions, systems, and lessons from building
+          IsGoBite and FleetFav.
+        </p>
+      </div>
     </section>
-
-    <section>
-      <h2>Recent Posts</h2>
-      <ul>
-        <li>
-          <h3>Getting Started with Gatsby.js</h3>
-          <p>Learn how to build fast, modern websites with Gatsby and React.</p>
-        </li>
-        <li>
-          <h3>Responsive Web Design Best Practices</h3>
+    <section className="section section--flush-top">
+      <div className="container">
+        <div className="empty-state">
           <p>
-            Tips and techniques for creating websites that look great on any
-            device.
+            Nothing published yet. In the meantime, the case studies cover how
+            each product works.
           </p>
-        </li>
-        <li>
-          <h3>Introduction to React Hooks</h3>
-          <p>
-            Understand how to use hooks to manage state and side effects in
-            React applications.
-          </p>
-        </li>
-      </ul>
+          <Link to="/work/" className="text-link">
+            Read the case studies <span className="arrow">→</span>
+          </Link>
+        </div>
+      </div>
     </section>
-
-    <Link to="/">Go to Home</Link>
-  </div>
+  </Layout>
 )
+
+export const Head = () => <Seo title="Writing" />
 
 export default BlogPage

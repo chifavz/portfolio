@@ -1,51 +1,40 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
+
+import "@fontsource-variable/inter"
+import "../styles/global.css"
 
 import Header from "./header"
-import "./layout.css"
+import { site } from "../data/site"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+const Layout = ({ children }) => (
+  <>
+    <a className="skip-link" href="#main">
+      Skip to content
+    </a>
+    <Header />
+    <main id="main">{children}</main>
+    <footer className="site-footer">
+      <div className="container site-footer__inner">
+        <div>
+          <p className="site-footer__name">{site.name}</p>
+          <p className="site-footer__note">
+            {site.role} · {site.location}
+          </p>
+        </div>
+        <nav className="site-footer__links" aria-label="Footer">
+          <Link to="/work/">Work</Link>
+          <Link to="/about/">About</Link>
+          <Link to="/blog/">Writing</Link>
+          <Link to="/contact/">Contact</Link>
+        </nav>
       </div>
-    </>
-  )
-}
+      <div className="container site-footer__base">
+        © {new Date().getFullYear()} {site.name} · Built with{` `}
+        <a href="https://www.gatsbyjs.com">Gatsby</a>
+      </div>
+    </footer>
+  </>
+)
 
 export default Layout
